@@ -1,0 +1,14 @@
+- hosts: master
+  become: yes
+  roles: 
+    - K8s_master
+
+- hosts: workernode
+  become: yes
+  vars_prompt: 
+    name: token
+    prompt: "Enter the token to join the cluster: "
+    private: no
+  roles: 
+    - K8s_workernode
+

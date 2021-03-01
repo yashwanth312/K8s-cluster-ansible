@@ -1,0 +1,6 @@
+- hosts: localhost
+  vars_files:
+      - cred.yml
+  roles: 
+          - OS_provisioning
+
